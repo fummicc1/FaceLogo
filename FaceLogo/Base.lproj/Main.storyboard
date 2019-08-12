@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="FaceLogo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </arscnView>
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-uo-0B8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="788"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RAh-VQ-tX5">
+                                <rect key="frame" x="14" y="832" width="386" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Uem-NU-Eb5"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Cyn-yp-D9K"/>
+                                </connections>
+                            </slider>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMc-fP-HfG">
+                                <rect key="frame" x="64" y="60" width="286" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="ZMc-fP-HfG" secondAttribute="trailing" constant="64" id="4x5-Nf-N4k"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="RAh-VQ-tX5" secondAttribute="bottom" id="6Nc-Bd-WdX"/>
+                            <constraint firstItem="ZMc-fP-HfG" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="64" id="9eR-ki-lub"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="VAl-uo-0B8" secondAttribute="trailing" id="VOs-WQ-Dtr"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
+                            <constraint firstItem="ZMc-fP-HfG" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="16" id="WRR-LL-bHQ"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="VAl-uo-0B8" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="h6h-nq-jBD"/>
+                            <constraint firstItem="VAl-uo-0B8" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="mLx-ce-yOY"/>
+                            <constraint firstItem="RAh-VQ-tX5" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" constant="16" id="oVq-dY-uKz"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="RAh-VQ-tX5" secondAttribute="trailing" constant="16" id="txN-Uk-rIQ"/>
+                            <constraint firstItem="RAh-VQ-tX5" firstAttribute="top" secondItem="VAl-uo-0B8" secondAttribute="bottom" id="yH0-1V-Wqi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                    </view>
+                    <connections>
+                        <outlet property="alphaSlider" destination="RAh-VQ-tX5" id="xnT-Th-Uk3"/>
+                        <outlet property="capturedImageView" destination="VAl-uo-0B8" id="3Ux-8O-MtE"/>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="stateLabel" destination="ZMc-fP-HfG" id="pyU-aL-iry"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
