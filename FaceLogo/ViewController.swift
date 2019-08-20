@@ -21,6 +21,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     @IBOutlet var stateLabel: UILabel!
     
+    var player: AVPlayer?
+    
     var capturedImageObserve: NSKeyValueObservation?
     
     var virtualFaceNode: MaskNode? {
@@ -46,11 +48,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     // マスクを作成
-    private func createFaceNode(image: UIImage? = nil) -> MaskNode? {
+    private func createFaceNode(image: UIImage?) -> MaskNode? {
         
         guard let device = MTLCreateSystemDefaultDevice(),
             let geometry = ARSCNFaceGeometry(device: device) else { return nil }
         let node = MaskNode(geometry: geometry, image: image)
+        node.opacity = 1 - CGFloat(alphaSlider.value)
+        return node
+    }
+    
+    private func createFaceNode(player: AVPlayer?) -> MaskNode? {
+        
+        guard let device = MTLCreateSystemDefaultDevice(),
+            let geometry = ARSCNFaceGeometry(device: device) else { return nil }
+        let node = MaskNode(geometry: geometry, player: player)
         node.opacity = 1 - CGFloat(alphaSlider.value)
         return node
     }
@@ -62,6 +73,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         pickerController = UIImagePickerController()
         pickerController?.delegate = self
         pickerController?.sourceType = .photoLibrary
+        pickerController?.mediaTypes = ["public.movie", "public.image"]
         present(pickerController!, animated: true, completion: nil)
     }
     
@@ -114,7 +126,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // シーンの照明を更新するかどうか
         sceneView.automaticallyUpdatesLighting = true
         
-        virtualFaceNode = createFaceNode()
+        virtualFaceNode = createFaceNode(image: nil)
         
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(showImagePickerController))
         swipeGesture.direction = .up
@@ -203,9 +215,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let originalImage = info[.originalImage] as? UIImage else { return }
-        dismiss(animated: true) {
-            self.virtualFaceNode = self.createFaceNode(image: originalImage)
+        if let originalImage = info[.originalImage] as? UIImage {
+            dismiss(animated: true) {
+                self.virtualFaceNode = self.createFaceNode(image: originalImage)
+            }
+        } else if let originalMovieURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+            let avPlayer = AVPlayer(url: originalMovieURL)
+            player = avPlayer
+            dismiss(animated: true) {
+                self.virtualFaceNode = self.createFaceNode(player: avPlayer)
+            }
         }
     }
 }
