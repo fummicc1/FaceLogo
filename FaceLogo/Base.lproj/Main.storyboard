@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tRs-3G-zRw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="FaceLogo" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                             </arscnView>
                             <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAl-uo-0B8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="739"/>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RAh-VQ-tX5">
-                                <rect key="frame" x="14" y="832" width="386" height="31"/>
+                                <rect key="frame" x="14" y="783" width="386" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Uem-NU-Eb5"/>
                                 </constraints>
@@ -60,6 +58,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="tye-d9-RXp"/>
                     <connections>
                         <outlet property="alphaSlider" destination="RAh-VQ-tX5" id="xnT-Th-Uk3"/>
                         <outlet property="capturedImageView" destination="VAl-uo-0B8" id="3Ux-8O-MtE"/>
@@ -69,6 +68,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1080" y="-192"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4gL-cB-7Te">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="tRs-3G-zRw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wro-90-Vr8">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="zJh-ni-5Yk"/>
+                        <segue destination="P4g-UY-W77" kind="relationship" relationship="viewControllers" id="Qu6-9j-mK9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UF-4V-AtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="nsS-d8-2xd">
+            <objects>
+                <viewController id="P4g-UY-W77" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZtU-4r-L7e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W74-v5-fW7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="W74-v5-fW7" firstAttribute="top" secondItem="ZtU-4r-L7e" secondAttribute="top" id="iQ6-KL-xgq"/>
+                            <constraint firstItem="76L-JZ-oVG" firstAttribute="bottom" secondItem="W74-v5-fW7" secondAttribute="bottom" id="wlq-5N-qmy"/>
+                            <constraint firstItem="W74-v5-fW7" firstAttribute="leading" secondItem="76L-JZ-oVG" secondAttribute="leading" id="xJR-wA-0yE"/>
+                            <constraint firstItem="76L-JZ-oVG" firstAttribute="trailing" secondItem="W74-v5-fW7" secondAttribute="trailing" id="yDF-Hy-MbB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="76L-JZ-oVG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="y50-Yk-dRK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAj-z0-yCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="477"/>
         </scene>
     </scenes>
 </document>

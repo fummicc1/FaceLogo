@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D34B28AA24DBC5A900ACC537 /* BodyTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34B28A924DBC5A900ACC537 /* BodyTrackingViewController.swift */; };
 		D368F70A22FFEF410066CDDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368F70922FFEF410066CDDA /* AppDelegate.swift */; };
 		D368F70E22FFEF410066CDDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D368F70D22FFEF410066CDDA /* ViewController.swift */; };
 		D368F71122FFEF410066CDDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D368F70F22FFEF410066CDDA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D34B28A924DBC5A900ACC537 /* BodyTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTrackingViewController.swift; sourceTree = "<group>"; };
 		D368F70622FFEF410066CDDA /* FaceLogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceLogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D368F70922FFEF410066CDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D368F70D22FFEF410066CDDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				D368F71422FFEF430066CDDA /* LaunchScreen.storyboard */,
 				D368F70F22FFEF410066CDDA /* Main.storyboard */,
 				D3C4A2092300F74900FED145 /* MaskNode.swift */,
+				D34B28A924DBC5A900ACC537 /* BodyTrackingViewController.swift */,
 			);
 			path = FaceLogo;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				D368F70E22FFEF410066CDDA /* ViewController.swift in Sources */,
 				D368F70A22FFEF410066CDDA /* AppDelegate.swift in Sources */,
+				D34B28AA24DBC5A900ACC537 /* BodyTrackingViewController.swift in Sources */,
 				D3C4A20A2300F74900FED145 /* MaskNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
